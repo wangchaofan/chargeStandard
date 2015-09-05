@@ -171,6 +171,13 @@ textarea {
 a {
     text-decoration: none;
 }
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -192,4 +199,121 @@ body {
 header {
     margin: 0 auto;
     width: 1200px;
+}
+header {
+    height: 100px;
+}
+.logo {
+    margin-top: 23px;
+    margin-left: 23px;
+    display: inline-block;
+    width: 158px;
+    height: 45px;
+}
+header nav {
+    padding-top: 32px;
+}
+header nav li {
+    margin: 0 27px;
+    display: inline-block;
+    font-size: 18px;
+    color: #666;
+}
+nav a {
+    color: #666;
+}
+nav a.current {
+    color: #29a7e1;
+}
+.banner {
+    text-align: center;
+    background-color: #29a7e1;
+}
+#main {
+    background-color: #f4fafd;
+}
+.layout-left {
+    float: left;
+    width: 836px;
+    padding-left: 8px;
+}
+.layout-right {
+    float: right;
+    width: 335px;
+}
+.config-title {
+    float: left;
+    width: 42px;
+    height: 143px;
+}
+.layout-left .content {
+    margin-top: 32px;
+}
+.content-box-big {
+    width: 786px;
+    min-height: 143px;
+    border: 1px solid #dee2e4;
+    background-color: #fff;
+}
+.content .content-box-big {
+    margin-left: 42px;
+}
+.row {
+    margin: 17px 0;
+    height: 25px;
+}
+.row .rl,
+.row .rc {
+    display: inline-block;
+    width: 90px;
+    font-size: 12px;
+    color: #999;
+}
+.row .rl {
+    text-align: right;
+}
+.row .rc {
+    width: auto;
+    font-size: 0;
+}
+.span1 {
+    display: inline-block;
+    width: 101px;
+    height: 25px;
+    border-right: 1px solid #fff;
+    font-size: 12px;
+    line-height: 25px;
+    text-align: center;
+    background-color: #e8e8e8;
+}
+.span1.select {
+    background-color: #11a3ea;
+}
+.text-right {
+    text-align: right !important;
+}
+.scroll {
+    position: relative;
+}
+.scroll .span1 {
+    border-right: 1px solid #bdbdbd;
+}
+.scroll-thumb {
+    position: absolute;
+    top: -3px;
+    width: 16px;
+    height: 31px;
+    text-align: center;
+    line-height: 42px;
+    background-color: #2dacd1;
+    cursor: pointer;
+}
+.scroll-thumb span {
+    display: inline-block;
+    width: 2px;
+    height: 12px;
+    background-color: #68c3de;
+}
+.scroll-thumb span:last-child {
+    margin-left: 2px;
 }
