@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d321b7b6-fe22-4b52-b2d0-e9ad13a5e36e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/banner.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/huiyuan.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/vip.png" />
-      <change type="DELETED" beforePath="E:\www\chargeStandard\.gitignore" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/chargeStandard.css" afterPath="$PROJECT_DIR$/css/chargeStandard.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chargeStandard.html" afterPath="$PROJECT_DIR$/chargeStandard.html" />
     </list>
@@ -31,8 +26,8 @@
       <file leaf-file-name="chargeStandard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chargeStandard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.903226">
-              <caret line="51" column="37" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="52" />
+            <state vertical-scroll-proportion="-6.774194">
+              <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -55,8 +50,8 @@
       <file leaf-file-name="chargeStandard.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/chargeStandard.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.704918">
-              <caret line="297" column="16" selection-start-line="297" selection-start-column="16" selection-end-line="297" selection-end-column="16" />
+            <state vertical-scroll-proportion="1.5409836">
+              <caret line="351" column="13" selection-start-line="351" selection-start-column="13" selection-end-line="351" selection-end-column="13" />
               <folding>
                 <element signature="e#3090#3110#0" expanded="false" />
               </folding>
@@ -303,15 +298,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/banner.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chargeStandard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.903226">
-          <caret line="51" column="37" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="52" />
+        <state vertical-scroll-proportion="-6.774194">
+          <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -321,10 +311,15 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/img/banner.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/chargeStandard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.704918">
-          <caret line="297" column="16" selection-start-line="297" selection-start-column="16" selection-end-line="297" selection-end-column="16" />
+        <state vertical-scroll-proportion="1.5409836">
+          <caret line="351" column="13" selection-start-line="351" selection-start-column="13" selection-end-line="351" selection-end-column="13" />
           <folding>
             <element signature="e#3090#3110#0" expanded="false" />
           </folding>
