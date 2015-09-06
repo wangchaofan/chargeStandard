@@ -305,10 +305,13 @@ nav a.current {
     position: relative;
     display: inline-block;
 }
-.scroll .span1 {
+.scroll-bar {
+    float: left;
+}
+.scroll-bar .span1 {
     border-right: 1px solid #bdbdbd;
 }
-.scroll .span1:last-child {
+.scroll-bar .span1:last-child {
     border-right: none;
 }
 .scroll-thumb {
@@ -330,14 +333,15 @@ nav a.current {
 .scroll-thumb span:last-child {
     margin-left: 2px;
 }
-.input-number {
+.scroll-value {
     position: relative;
+    margin-left: 12px;
     width: 88px;
     height: 25px;
     font-size: 12px;
     color: #666;
 }
-.input-number input[type='number'] {
+.scroll-value input[type='number'] {
     display: block;
     width: 88px;
     height: 100%;
