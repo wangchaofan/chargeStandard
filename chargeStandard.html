@@ -6,6 +6,7 @@
 	<title>收费标准</title>
 	<link rel="stylesheet" href="css/chargeStandard.css"/>
 	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/scroll.js"></script>
 </head>
 <body>
 	<header>
@@ -54,7 +55,7 @@
 					<div class="row">
 						<div class="rl">查看简历：</div>
 						<div class="rc">
-							<div class="scroll">
+							<div id="jianliScroll" class="scroll">
 								<div class="scroll-thumb"><span></span><span></span></div>
 								<div class="scroll-cover"></div>
 								<div class="scroll-bar">
@@ -64,12 +65,10 @@
 									<span class="span1">1000</span>
 									<span class="span1">3000</span>
 								</div>
-							</div>
-							<div class="span1 nostyle pull-right">
-								<span class="input-number pull-right">
-									<input type="number" value="1" min="1"/>
-									<p class="danwei">封</p>
-								</span>
+								<div class="span1 scroll-value nostyle">
+									<input type="number" value="1" />
+									<p class="danwei">场</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -107,12 +106,10 @@
 									<span class="span1 text-right">8</span>
 									<span class="span1 text-right">10</span>
 								</div>
-							</div>
-							<div class="span1 nostyle pull-right">
-								<span class="input-number pull-right">
-									<input type="number" value="1" min="1"/>
-									<p class="danwei">场</p>
-								</span>
+                                <div class="span1 scroll-value nostyle">
+                                    <input type="number" value="1" />
+                                    <p class="danwei">场</p>
+                                </div>
 							</div>
 							<p class="tip">办理年会员以上赠送线下招聘会1场</p>
 						</div>
@@ -231,5 +228,10 @@
 	<footer style="width: 100%;background-color: #f2f2f2;text-align: center;">
 		<img src="img/footer.jpg" align="">
 	</footer>
+	<script type="text/javascript">
+		var jianliScroll = new Scroll({
+			render: 'jianliScroll'
+		});
+	</script>
 </body>
 </html>

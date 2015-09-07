@@ -322,10 +322,13 @@ nav a.current {
     position: relative;
     display: inline-block;
 }
-.scroll .span1 {
+.scroll-bar {
+    float: left;
+}
+.scroll-bar .span1 {
     border-right: 1px solid #bdbdbd;
 }
-.scroll .span1:last-child {
+.scroll-bar .span1:last-child {
     border-right: none;
 }
 .scroll-thumb {
@@ -355,15 +358,16 @@ nav a.current {
     height: 32px;
     background-color: #333;
 }
-.input-number {
+.scroll-value {
     position: relative;
+    margin-left: 12px;
     width: 88px;
     height: 25px;
     font-size: 12px;
     color: #666;
     line-height: 25px;
 }
-.input-number input[type='number'] {
+.scroll-value input[type='number'] {
     display: block;
     width: 88px;
     height: 25px;
@@ -372,7 +376,7 @@ nav a.current {
     background: #fff;
     border: 1px solid #e8e8e8;
 }
-.input-number .danwei {
+.danwei {
     position: absolute;
     margin: 0;
     top: 0;
