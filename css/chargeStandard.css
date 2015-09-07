@@ -193,15 +193,15 @@ body {
     font-family: 'Microsoft YaHei', sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    background-color: #fff;
+    background-color: #f4fafd;
 }
-.wrap-main,
-header {
+.wrap-main {
     margin: 0 auto;
     width: 1200px;
 }
 header {
     height: 100px;
+    background-color: #fff;
 }
 .logo {
     margin-top: 23px;
@@ -229,9 +229,6 @@ nav a.current {
     text-align: center;
     background-color: #29a7e1;
 }
-#main {
-    background-color: #f4fafd;
-}
 .layout-left {
     float: left;
     width: 836px;
@@ -246,8 +243,11 @@ nav a.current {
     width: 42px;
     height: 143px;
 }
-.layout-left .content {
-    margin-top: 32px;
+#main {
+    padding-top: 32px;
+}
+#main .content {
+    margin-bottom: 32px;
 }
 .content-box-big {
     width: 786px;
@@ -262,7 +262,6 @@ nav a.current {
 }
 .row {
     margin-top: 34px;
-    height: 25px;
 }
 .content-box-big .row:first-child {
     margin-top: 0;
@@ -271,34 +270,52 @@ nav a.current {
 .row .rc {
     display: inline-block;
     width: 90px;
+    height: 25px;
     font-size: 12px;
     color: #999;
 }
 .row .rl {
+    vertical-align: top;
+    line-height: 25px;
     text-align: right;
 }
 .row .rc {
     width: auto;
     font-size: 0;
 }
-.span1 {
+.span1,
+.span2 {
     display: inline-block;
     width: 101px;
     height: 25px;
     border-right: 1px solid #fff;
     font-size: 12px;
-    line-height: 25px;
+    line-height: 2.125;
     text-align: center;
     background-color: #e8e8e8;
 }
-.span1.select {
+.span2 {
+    width: 202px;
+    border-right: none;
+}
+.span1.select,
+.span2.select {
+    color: #fff;
     background-color: #11a3ea;
 }
-.span1.nostyle {
+.nostyle {
     border: none;
     background: none;
 }
+.des-link {
+    padding-left: 16px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+    color: #999;
+}
 .text-right {
+    padding-right: 2px;
     text-align: right !important;
 }
 .scroll {
@@ -330,27 +347,138 @@ nav a.current {
 .scroll-thumb span:last-child {
     margin-left: 2px;
 }
+.scroll-cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 32px;
+    background-color: #333;
+}
 .input-number {
     position: relative;
     width: 88px;
     height: 25px;
     font-size: 12px;
     color: #666;
+    line-height: 25px;
 }
 .input-number input[type='number'] {
     display: block;
     width: 88px;
-    height: 100%;
+    height: 25px;
     outline: none;
     padding-left: 16px;
-    font-size: 12px;
-    line-height: 21px;
     background: #fff;
     border: 1px solid #e8e8e8;
 }
-p.danwei {
+.input-number .danwei {
     position: absolute;
     margin: 0;
     top: 0;
     right: 25px;
 }
+.tip {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #999;
+}
+#userOrder {
+    width: 335px;
+    padding: 20px 8px;
+    border: 1px solid #dee2e4;
+    background-color: #fff;
+}
+#userOrder h3 {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 18px;
+    line-height: 30px;
+    color: #999;
+}
+.order-list {
+    padding: 10px 0;
+    border-top: 2px solid #88d1f4;
+    border-bottom: 2px solid #88d1f4;
+}
+.order-list li {
+    height: 36px;
+    padding: 10px 0;
+    font-size: 14px;
+}
+.olb { 
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    color: #999;
+}
+.ovl { 
+    float: right;
+    display: inline-block;
+    width: 188px;
+    text-align: left;
+    color: #333
+}
+.expenses {
+    margin-top: 10px;
+}
+.expenses .olb {
+    line-height: 46px;
+}
+.expenses .price {
+    font-size: 30px;
+    color: #ff0000;
+}
+.btn {
+    display: block;
+    text-align: center;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+.btn-regist-user {
+    margin: 0 auto;
+    width: 248px;
+    height: 50px;
+    font-size: 24px;
+    line-height: 50px;
+    color: #fff;
+    background-color: #0697da;
+}
+.btn-regist-user.disabled {
+    background-color: #ccc;
+    cursor: auto;
+}
+.protocol {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+.protocol input {
+    margin-right: 4px;
+}
+.protocol label {
+    color: #999;
+}
+.protocol label a {
+    color: #333;
+}
+.phone {
+    margin-top: 36px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    text-align: center;
+    color: #00aaff;
+}
+.b-nav {
+    width: 100%;
+    height: 78px;
+    text-align: center;
+    color: #666;
+    background-color: #fff;
+}
+.b-nav a {
+    font-size: 14px;
+    line-height: 78px;
+    color: #666;
+}
+

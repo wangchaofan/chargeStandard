@@ -9,16 +9,18 @@
 </head>
 <body>
 	<header>
-		<img class="logo" src="img/logo.png" alt="城才网">
-		<nav class="nav pull-right" role="navigation">
-			<ul>
-				<li><a href="">返回首页</a></li>
-				<li><a class="current" href="">办理会员</a></li>
-				<li><a href="">广告服务</a></li>
-				<li><a href="">联系我们</a></li>
-				<li><a href="">关于我们</a></li>
-			</ul>
-		</nav>
+		<div class="wrap-main">
+			<a href=""><img class="logo" src="img/logo.png" alt="城才网"></a>
+			<nav class="nav pull-right" role="navigation">
+				<ul>
+					<li><a href="">返回首页</a></li>
+					<li><a class="current" href="">办理会员</a></li>
+					<li><a href="">广告服务</a></li>
+					<li><a href="">联系我们</a></li>
+					<li><a href="">关于我们</a></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 	<div class="banner">
 		<img src="img/banner.jpg" alt=""/>
@@ -54,6 +56,7 @@
 						<div class="rc">
 							<div class="scroll">
 								<div class="scroll-thumb"><span></span><span></span></div>
+								<div class="scroll-cover"></div>
 								<div class="scroll-bar">
 									<span class="span1">100</span>
 									<span class="span1">200</span>
@@ -62,26 +65,171 @@
 									<span class="span1">3000</span>
 								</div>
 							</div>
-							<span class="span1 nostyle pull-right">
+							<div class="span1 nostyle pull-right">
 								<span class="input-number pull-right">
-									<input type="number" value="1" />
-									<p class="danwei">场</p>
+									<input type="number" value="1" min="1"/>
+									<p class="danwei">封</p>
 								</span>
-							</span>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 			<section id="vip" class="content clearfix">
 				<div class="config-title"><img src="img/vip.png" alt=""></div>
-				<div class="content-box-big"></div>
+				<div class="content-box-big">
+					<div class="row">
+						<div class="rl">个性化页面：</div>
+						<div class="rc">
+							<span class="span2"> 制定企业个性化页面</span>
+							<span class="span2 select"> 城才网默认企业页面(免费)</span>
+							<span><a class="des-link" href="">了解个性化页面 >></a></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="rl">专属客服：</div>
+						<div class="rc">
+							<span class="span2">  1:1专属招聘客服</span>
+							<span class="span2 select"> 不需要专职客服</span>
+							<span><a class="des-link" href="">了解专属客服 >></a></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="rl">现场招聘会：</div>
+						<div class="rc">
+							<div class="scroll">
+								<div class="scroll-thumb"><span></span><span></span></div>
+								<div class="scroll-cover"></div>
+								<div class="scroll-bar">
+									<span class="span1 text-right">1</span>
+									<span class="span1 text-right">3</span>
+									<span class="span1 text-right">5</span>
+									<span class="span1 text-right">8</span>
+									<span class="span1 text-right">10</span>
+								</div>
+							</div>
+							<div class="span1 nostyle pull-right">
+								<span class="input-number pull-right">
+									<input type="number" value="1" min="1"/>
+									<p class="danwei">场</p>
+								</span>
+							</div>
+							<p class="tip">办理年会员以上赠送线下招聘会1场</p>
+						</div>
+					</div>
+				</div>
 			</section>
 			<section id="special" class="content clearfix">
 				<div class="config-title"><img src="img/tese.png" alt=""></div>
-				<div class="content-box-big"></div>
+				<div class="content-box-big">
+					<div class="row">
+						<div class="rl">人才推荐：</div>
+						<div class="rc">
+							<span class="span1 select">1个岗位</span>
+							<span class="span1">2个岗位</span>
+							<span class="span1">3个岗位</span>
+							<span class="span1">4个岗位</span>
+							<span class="span1">5个岗位</span>
+							<span class="span1">6个岗位</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="rl">刷新岗位：</div>
+						<div class="rc">
+							<span class="span2">开启自动刷新1天/次</span>
+							<span class="span2 select">手动刷新岗位(免费)</span>
+							<span><a class="des-link" href="">了解刷新岗位>></a></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="rl">短消通知：</div>
+						<div class="rc">
+							<span class="span2">个人应聘手机短信通知</span>
+							<span class="span2 select">不开启短通知（免费）</span>
+							<span><a class="des-link" href="">了解刷新岗位>></a></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="rl">脱机服务：</div>
+						<div class="rc">
+							<span class="span2">申请脱机招聘服务</span>
+							<span class="span2 select">自主管理招聘（免费</span>
+							<span><a class="des-link" href="">了解脱机服务>></a></span>
+						</div>
+					</div>
+				</div>
 			</section>
 		</div>
-		<div class="layout-right"></div>
+		<div class="layout-right">
+			<div id="userOrder" class="content">
+				<h3 class="h3">会员订单</h3>
+				<ul class="order-list" id="orderList">
+					<li>
+						<span class="olb">会员类型：</span>
+						<span class="ovl">季度会员</span>
+					</li>
+					<li>
+						<span class="olb">可发布岗位：</span>
+						<span class="ovl">5个</span>
+					</li>
+					<li>
+						<span class="olb">可查看简历：</span>
+						<span class="ovl">200份</span>
+					</li>
+					<li>
+						<span class="olb">个性化页面：</span>
+						<span class="ovl">默认企业页面</span>
+					</li>
+					<li>
+						<span class="olb">专属客服：</span>
+						<span class="ovl">无</span>
+					</li>
+					<li>
+						<span class="olb">线下招聘会：</span>
+						<span class="ovl">2场</span>
+					</li>
+					<li>
+						<span class="olb">人才推荐：</span>
+						<span class="ovl">1个岗位</span>
+					</li>
+					<li>
+						<span class="olb">刷新岗位：</span>
+						<span class="ovl">手动刷新</span>
+					</li>
+					<li>
+						<span class="olb">短消通知：</span>
+						<span class="ovl">未启动</span>
+					</li>
+					<li>
+						<span class="olb">脱机服务：</span>
+						<span class="ovl">自主管理</span>
+					</li>
+					<li>
+						<span class="olb">城才币：</span>
+						<span class="ovl">1050个</span>
+					</li>
+				</ul>
+				<div class="expenses">
+					<span class="olb">会员费用：</span>
+					<span class="ovl price">¥1050.00</span>
+				</div>
+				<a class="btn btn-regist-user">开通会员</a>
+				<div class="protocol"><label><input type="checkbox"/>已阅读并同意 <a href="">《成才网会员协议》</a></label></div>
+				<div class="phone">
+					<span>会员服务热线：<tel>0577-62567500</tel></span>
+				</div>
+			</div>
+		</div>
 	</div>
+	<div class="b-nav">
+		<a href="">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="">找工作</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="">招人才</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="">门店招牌</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="">职场资讯</a> 
+	</div>
+	<footer style="width: 100%;background-color: #f2f2f2;text-align: center;">
+		<img src="img/footer.jpg" align="">
+	</footer>
 </body>
 </html>
