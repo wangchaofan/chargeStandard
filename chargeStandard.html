@@ -55,21 +55,7 @@
 					<div class="row">
 						<div class="rl">查看简历：</div>
 						<div class="rc">
-							<div id="jianliScroll" class="scroll">
-								<div class="scroll-thumb"><span></span><span></span></div>
-								<div class="scroll-cover"></div>
-								<div class="scroll-bar">
-									<span class="span1">100</span>
-									<span class="span1">200</span>
-									<span class="span1">500</span>
-									<span class="span1">1000</span>
-									<span class="span1">3000</span>
-								</div>
-								<div class="span1 scroll-value nostyle">
-									<input type="number" value="1" />
-									<p class="danwei">场</p>
-								</div>
-							</div>
+							<div id="jianLi"></div>
 						</div>
 					</div>
 				</div>
@@ -96,7 +82,7 @@
 					<div class="row">
 						<div class="rl">现场招聘会：</div>
 						<div class="rc">
-							<div class="scroll">
+							<div id="zhaoPin" class="scroll">
 								<div class="scroll-thumb"><span></span><span></span></div>
 								<div class="scroll-cover"></div>
 								<div class="scroll-bar">
@@ -228,10 +214,6 @@
 	<footer style="width: 100%;background-color: #f2f2f2;text-align: center;">
 		<img src="img/footer.jpg" align="">
 	</footer>
-	<script type="text/javascript">
-		var jianliScroll = new Scroll({
-			render: 'jianliScroll'
-		});
-	</script>
+	<script type="text/javascript" src="js/chargeStandard.js"></script>
 </body>
 </html>

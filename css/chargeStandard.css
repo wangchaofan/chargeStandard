@@ -284,18 +284,25 @@ nav a.current {
     font-size: 0;
 }
 .span1,
-.span2 {
+.span2,
+.scroll-item-box {
     display: inline-block;
-    width: 101px;
+    width: 100px;
     height: 25px;
     border-right: 1px solid #fff;
     font-size: 12px;
     line-height: 2.125;
     text-align: center;
+    cursor: pointer;
     background-color: #e8e8e8;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transitionL: all .3s;
 }
 .span2 {
-    width: 202px;
+    width: 200px;
     border-right: none;
 }
 .span1.select,
@@ -321,19 +328,31 @@ nav a.current {
 .scroll {
     position: relative;
     display: inline-block;
+    -webkit-user-select: none;
 }
-.scroll-bar {
+.scroll-range {
     float: left;
 }
-.scroll-bar .span1 {
+.scroll-bar .scroll-item-box,
+.scroll-cover .scroll-item-box {
     border-right: 1px solid #bdbdbd;
+    background: none;
 }
-.scroll-bar .span1:last-child {
+.scroll-bar .scroll-item-box:last-child,
+.scroll-cover .scroll-item-box:last-child {
     border-right: none;
+}
+.scroll-bar {
+    padding-right: 16px;
+    background: #e8e8e8;
+}
+.scroll-cover .scroll-item-box {
+    color: #fff;
 }
 .scroll-thumb {
     position: absolute;
     top: -3px;
+    left: 0;
     width: 16px;
     height: 31px;
     text-align: center;
@@ -352,14 +371,25 @@ nav a.current {
 }
 .scroll-cover {
     position: absolute;
-    left: 0;
+    left: 0px;
     top: 0;
     width: 0;
-    height: 32px;
-    background-color: #333;
+    height: 25px;
+    overflow: hidden;
+    background: #11a3ea;
+    
+}
+.scroll-current {
+    display: block;
+    height: 25px;
+    overflow: hidden;
+    width: auto;
+    background: #11a3ea;
+    white-space: nowrap;
 }
 .scroll-value {
     position: relative;
+    display: inline-block;
     margin-left: 12px;
     width: 88px;
     height: 25px;
@@ -367,12 +397,19 @@ nav a.current {
     color: #666;
     line-height: 25px;
 }
+.scroll-transition {
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transitionL: all .3s;
+}
 .scroll-value input[type='number'] {
     display: block;
-    width: 88px;
+    width: 72px;
     height: 25px;
     outline: none;
-    padding-left: 16px;
+    padding-left: 10px;
     background: #fff;
     border: 1px solid #e8e8e8;
 }
@@ -380,7 +417,7 @@ nav a.current {
     position: absolute;
     margin: 0;
     top: 0;
-    right: 25px;
+    right: 32px;
 }
 .tip {
     margin-top: 8px;
