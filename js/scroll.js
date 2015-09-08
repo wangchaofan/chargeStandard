@@ -8,6 +8,9 @@ var Scroll = function (options) {
 	}
 	this.dom = null;
 	$.extend(this.options, options);
+	this.value = this.options.origValue;
+	this.coverLength = this.getCoverLength();
+	console.log(this.coverLength);
 	this.init();
 }
 Scroll.prototype = {
@@ -27,12 +30,12 @@ Scroll.prototype = {
 		var $rangeScroll = $('<div class="scroll-range">');
 		var sections_html = [];
 		for(var i = 0;i < options.sections.length; i++) {
-			sections_html.push('<span class="scroll-item-box">'+ options.sections[i] +'</span>')
+			sections_html.push('<span class="scroll-item-box" data-value="'+ options.sections[i] +'">'+ options.sections[i] +'</span>')
 		}
-		var scroll_cover_html = '<div class="scroll-cover"><div class="scroll-current">' + sections_html.join('') + 
+		var scroll_cover_html = '<div class="scroll-cover scroll-transition"><div class="scroll-current">' + sections_html.join('') + 
 								'</div></div>';
 		var scroll_bar_html   = '<div class="scroll-bar">' + sections_html.join('') + '</div>';
-		var scroll_thum_html  = '<div class="scroll-thumb"><span></span><span></span></div>';
+		var scroll_thum_html  = '<div class="scroll-thumb scroll-transition"><span></span><span></span></div>';
 		var scroll_value_html = '<div class="scroll-value nostyle">' +
 									'<input type="number" value="'+ options.origValue +'" step="'+ options.step +'"/>' +
 									'<p class="danwei">'+ options.danwei +'</p>' +
@@ -46,15 +49,26 @@ Scroll.prototype = {
 			left   = 0;
 		var $thumb = this.dom.find('.scroll-thumb');
 		var $cover = this.dom.find('.scroll-cover');
-		var $bar = this.dom.find('.scroll-bar');
+		var $range = this.dom.find('.scroll-range');
+		$range.on('mousedown', function (event) {
+			var event = event || window.event;
+			var pageX = event.pageX;
+			var offsetX = $range.offset().left;
+			$thumb.css('left', pageX - offsetX);
+			$cover.css('width', pageX - offsetX);
+		});
 		$thumb.bind('mousedown', mouseDown);
 		$('body').bind('mouseup', mouseUp);
 
 		function mouseDown(event) {
 			var event = event || window.event;
+			event.stopPropagation();
 			startX = event.pageX;
 			down   = true;
+			$cover.removeClass('scroll-transition');
+			$thumb.removeClass('scroll-transition');
 			$('body').bind('mousemove', mouseMove);
+			return false;
 		}
 		function mouseMove(event) {
 			if(down) {
@@ -67,7 +81,21 @@ Scroll.prototype = {
 		function mouseUp(event) {
 			down = false;
 			left = parseInt($thumb.css('left').substr(0, $thumb.css('left').length - 2), 10);
+			$cover.addClass('scroll-transition');
+			$thumb.addClass('scroll-transition');
 			$('body').unbind('mousemove');
 		}
+	},
+	setValue: function () {
+		setTimeout()
+	},
+	getCoverLength: function () {
+		var _self    = this;
+		var sections = this.options.sections;
+		var i = 0;
+		while(sections[i] < _self.value) {
+			i++;
+		}
+		return  100 * i + (_self.value - (sections[i - 1] || 0)) / (sections[i] / 100);
 	}
 }
