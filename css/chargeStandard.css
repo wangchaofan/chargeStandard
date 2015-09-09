@@ -522,4 +522,8 @@ nav a.current {
     line-height: 78px;
     color: #666;
 }
+.btn.disabled {
+    background: #ccc;
+    cursor: auto;
+}
 
