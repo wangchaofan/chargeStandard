@@ -4,7 +4,7 @@ var Scroll = function (options) {
 		sections: [], // 分段 type: Array
 		step: 1, //每次跳跃数量
 		origValue: 1, // 初始价格
-		unitPrice: 0 // 单位价格,
+		unitPrice: 0, // 单位价格,
 		danwei: null // 单位
 	}
 	this.dom = null;
@@ -127,7 +127,7 @@ Scroll.prototype = {
 		var i = Math.floor(length / 100),
 			l = (length - 100 * i)%100;
 		if(i === 0) {
-			_self.value = Math.floor(l/step) * step === 0 ? step : Math.floor(l/step) * step;
+			_self.value = Math.floor((l/100 * sections[0])/step) * step || step;
 		} else if(i >= sections.length) {
 			_self.value = sections[i-1];
 		} else {
