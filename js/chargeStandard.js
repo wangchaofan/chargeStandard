@@ -26,7 +26,7 @@ var jianliScroll = new Scroll({
 	sections: [100, 200, 500, 1000, 3000],
 	danwei: '封',
 	origValue: 200,
-	step: 10,
+	step: 100,
 	unitPrice: 20
 });
 

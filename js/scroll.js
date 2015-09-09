@@ -1,10 +1,11 @@
 var Scroll = function (options) {
 	this.options = {
-		render: '',
-		sections: [],
-		step: 1,
-		origValue: 1,
-		unitPrice: 0
+		render: '', // render Dom
+		sections: [], // 分段 type: Array
+		step: 1, //每次跳跃数量
+		origValue: 1, // 初始价格
+		unitPrice: 0 // 单位价格,
+		danwei: null // 单位
 	}
 	this.dom = null;
 	$.extend(this.options, options);
@@ -98,8 +99,8 @@ Scroll.prototype = {
 			if(!down) return false;
 			var event       = event || window.event;
 			var slideLength = event.pageX - startX + _self.coverLength;
-			if(slideLength < 0) {
-				slideLength = 0;
+			if(slideLength <= 0) {
+				slideLength = 1;
 			} else if(slideLength > rangeLength) {
 				slideLength = rangeLength;
 			}
@@ -118,23 +119,24 @@ Scroll.prototype = {
 		}
 	},
 	//set值
-	setValue: function (slideLength) {
-		var _self = this;
+	setValue: function (slideLength) {	
+		var _self    = this;
+		var step     = _self.options.step;
 		var sections = this.options.sections;
-		var length = slideLength || _self.coverLength;
+		var length   = slideLength || _self.coverLength;
 		var i = Math.floor(length / 100),
 			l = (length - 100 * i)%100;
-
 		if(i === 0) {
-			_self.value = _self.options.step;
+			_self.value = Math.floor(l/step) * step === 0 ? step : Math.floor(l/step) * step;
 		} else if(i >= sections.length) {
 			_self.value = sections[i-1];
 		} else {
-			_self.value = (sections[i-1] || _self.options.step) + ((sections[i] || 0) - sections[i-1]) * l / 100;
-			_self.value = _self.value - _self.value % _self.options.step + _self.options.step;
+			_self.value = (sections[i-1] || step) + ((sections[i] || 0) - sections[i-1]) * l / 100;
+			_self.value = _self.value - _self.value % step + step;
 		}
 		_self.setPrice();
 		_self.dom.find('input').val(_self.value);
+		$('#' + _self.dom.attr('data-select')).text(_self.value + _self.options.danwei);
 	},
 	//set覆盖范围
 	setCoverLength: function () {
@@ -147,7 +149,6 @@ Scroll.prototype = {
 			i++;
 		}
 		_self.coverLength = Math.floor(100 * i + (_self.value - (sections[i - 1] || 0)) / ((sections[i] - (sections[i - 1] || 0)) / 100));
-		//console.log(_self.coverLength);
 		$thumb.css('left',  _self.coverLength);
 		$cover.css('width', _self.coverLength);
 	},
