@@ -9,8 +9,8 @@ var Scroll = function (options) {
 	}
 	this.dom = null;
 	$.extend(this.options, options);
-	this.value = this.options.origValue;
-	this.price = this.options.origValue / this.options.step * this.options.unitPrice;
+	this.value 		 = this.options.origValue;
+	this.price 		 = this.options.origValue / this.options.step * this.options.unitPrice;
 	this.coverLength = 0;
 	this.init();
 }
@@ -48,8 +48,8 @@ Scroll.prototype = {
 		_self.dom.append(scroll_value_html);
 	},
 	initEvent: function () {
-		var _self = this;
-		const RE = /^\d+/;
+		const RE   = /^\d+/;
+		var _self  = this;
 		var $thumb = this.dom.find('.scroll-thumb');
 		var $cover = this.dom.find('.scroll-cover');
 		var $range = this.dom.find('.scroll-range');
@@ -60,12 +60,10 @@ Scroll.prototype = {
 
 		//点击选择
 		$range.on('mousedown', function (event) {
-			var event = event || window.event;
-			var pageX = event.pageX;
+			var event   = event || window.event;
+			var pageX   = event.pageX;
 			var offsetX = $range.offset().left;
 			_self.coverLength = Math.floor(pageX - offsetX > rangeLength ? rangeLength : pageX - offsetX);
-			$thumb.css('left',  _self.coverLength);
-			$cover.css('width', _self.coverLength);
 			_self.setValue();
 			_self.setCoverLength();
 		});
@@ -80,6 +78,7 @@ Scroll.prototype = {
 			$this.val(value);
 			_self.value = value;
 			_self.setCoverLength();
+			_self.setPrice();
 		});
 		//滑动选择
 		$thumb.bind('mousedown', mouseDown);
@@ -119,20 +118,25 @@ Scroll.prototype = {
 		}
 	},
 	//set值
-	setValue: function (slideLength) {	
-		var _self    = this;
-		var step     = _self.options.step;
-		var sections = this.options.sections;
-		var length   = slideLength || _self.coverLength;
-		var i = Math.floor(length / 100),
-			l = (length - 100 * i)%100;
-		if(i === 0) {
-			_self.value = Math.floor((l/100 * sections[0])/step) * step || step;
-		} else if(i >= sections.length) {
-			_self.value = sections[i-1];
+	setValue: function (slideLength, value) {	
+		var _self = this;
+		if(value) {
+			_self.value = value;
 		} else {
-			_self.value = (sections[i-1] || step) + ((sections[i] || 0) - sections[i-1]) * l / 100;
-			_self.value = _self.value - _self.value % step + step;
+			var step     = _self.options.step;
+			var sections = this.options.sections;
+			var rangeLength = parseInt(/^\d+/.exec(_self.dom.find('.scroll-range').css('width')), 10) - 16;
+			var length   = slideLength || _self.coverLength;
+			var i        = length === rangeLength ?  Math.ceil(length / 100) : Math.ceil(length / 100) - 1,
+				l 		 = (length - 100 * i)%100;
+			if(i === 0) {
+				_self.value = Math.floor((l/100 * sections[0])/step) * step || step;
+			} else if(i >= sections.length) {
+				_self.value = sections[i-1];
+			} else {
+				_self.value = sections[i-1] + ((sections[i] || 0) - sections[i-1]) * l / 100;
+				_self.value = _self.value - _self.value % step + step;
+			}
 		}
 		_self.setPrice();
 		_self.dom.find('input').val(_self.value);
@@ -141,20 +145,21 @@ Scroll.prototype = {
 	//set覆盖范围
 	setCoverLength: function () {
 		var _self    = this;
-		var $thumb = this.dom.find('.scroll-thumb');
-		var $cover = this.dom.find('.scroll-cover');
+		var $thumb   = this.dom.find('.scroll-thumb');
+		var $cover   = this.dom.find('.scroll-cover');
 		var sections = this.options.sections;
-		var i = 0;
+		var i        = 0;
 		while(sections[i] < _self.value) {
 			i++;
 		}
+		//console.log(_self.value);
 		_self.coverLength = Math.floor(100 * i + (_self.value - (sections[i - 1] || 0)) / ((sections[i] - (sections[i - 1] || 0)) / 100));
 		$thumb.css('left',  _self.coverLength);
 		$cover.css('width', _self.coverLength);
 	},
 	//set价格
 	setPrice: function () {
-		var _self = this;
+		var _self   = this;
 		_self.price = _self.value / _self.options.step * _self.options.unitPrice;
 		_self.dom.attr('price', _self.price);
 		Charge.balance();

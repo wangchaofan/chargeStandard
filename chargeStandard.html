@@ -9,6 +9,7 @@
 	<script src="js/scroll.js"></script>
 </head>
 <body>
+	<!-- 页面上所有的价格标注位置为  price="" -->
 	<header>
 		<div class="wrap-main">
 			<a href=""><img class="logo" src="img/logo.png" alt="城才网"></a>
@@ -34,11 +35,12 @@
 					<div class="row">
 						<div class="rl">会员类型：</div>
 						<div class="rc" data-select="o_huiyuan">
-							<span class="span1 select" price="10">季度会员</span>
-							<span class="span1"	price="20">半年会员</span>
-							<span class="span1"	price="30">年会员</span>
-							<span class="span1"	price="40">两年会员</span>
-							<span class="span1"	price="50">三会员</span>
+						<!-- data 为不同类型会员对应的套餐 注意格式 -->
+							<span class="span1 select" price="10" data='{"jianli":"100","zhaopin":"1"}'>季度会员</span>
+							<span class="span1"	price="20" data='{"jianli":"200","zhaopin":"2"}'>半年会员</span>
+							<span class="span1"	price="30" data='{"jianli":"1000","zhaopin":"4"}'>年会员</span>
+							<span class="span1"	price="40" data='{"jianli":"2000","zhaopin":"7"}'>两年会员</span>
+							<span class="span1"	price="50" data='{"jianli":"3000","zhaopin":"10"}'>三年会员</span>
 						</div>
 					</div>
 					<div class="row">
