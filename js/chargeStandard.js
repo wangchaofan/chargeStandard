@@ -18,10 +18,11 @@ Charge.selectMeal = function (data) {
 		if(key === 'jianli') {
 			jianliScroll.setValue(0, parseInt(mealData[key]));
 			jianliScroll.setCoverLength();
-		}
-		if(key === 'zhaopin') {
+		} else if(key === 'zhaopin') {
 			zhaopinScroll.setValue(0, parseInt(mealData[key]));
 			zhaopinScroll.setCoverLength();
+		} else {
+			$('#' + mealData[key]).click();
 		}
 	}
 };
